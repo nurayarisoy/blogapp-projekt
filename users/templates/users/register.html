@@ -1,0 +1,17 @@
+{% extends 'users/base.html' %} {% block content %}
+
+<h2>Join Today</h2>
+{% load crispy_forms_tags %}
+
+{% if request.user.is_authenticated %}
+
+<h3>Thanks for registering</h3>
+
+{% else %}
+
+
+<form action="" method="post" enctype="multipart/form-data">
+  {% csrf_token %} {{ form_user | crispy }} {{ form_profile | crispy }}
+  <button type="submit" class="btn btn-light">Sign Up</button>
+</form>
+{% endif %} {% endblock content %}
