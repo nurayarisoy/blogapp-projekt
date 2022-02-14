@@ -30,10 +30,14 @@
         <a class="nav-link" href="/admin">admin</a>
       </li>
       {% endif %}
+      <li class="nav-item active">
+        {% comment %} {% url 'profile' %} {% endcomment %}
+        <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+      </li>
 
       <li class="nav-item active">
         {% comment %} {% url 'logout' %} {% endcomment %}
-        <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+        <a class="nav-link" href="{% url 'user_logout' %}">Log Out</a>
       </li>
       {% else %}
 

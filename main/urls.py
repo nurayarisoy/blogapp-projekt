@@ -21,6 +21,10 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home, name='home'),
+   
+    path("", include("blogapp.urls")),
     path('users/', include('users.urls')),
+    
+    path('accounts/', include('django.contrib.auth.urls')),
+    
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

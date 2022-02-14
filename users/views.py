@@ -15,11 +15,11 @@ def register(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data["username"]
-            email = form.cleaned_data["email"]
+            # email = form.cleaned_data["email"]
             password = form.cleaned_data["password1"]
-            # veya
+            
             # username = form.cleaned_data.get('username')
-            user = authenticate(username=username,email=email, password=password)
+            user = authenticate(username=username,password=password)
             login(request, user)
             return redirect("home")
     context = {
